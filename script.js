@@ -1,67 +1,8 @@
-// // Ваш скрипт
-// const myScriptContent = `
-//   console.log(this.document);
-//   // Здесь может быть любой другой код, который вы хотите выполнить
-// `;
-
-// // Ваш CSS код
-// const myCssContent = `
-//   body {
-//     color: red;
-//   }
-// `;
-
-// // Функция для инжектирования скрипта
-// function injectScript(document) {
-// 	const script = document.createElement("script");
-// 	script.textContent = myScriptContent;
-// 	document.head.appendChild(script);
-
-// 	const style = document.createElement("style");
-// 	style.textContent = myCssContent;
-// 	document.head.appendChild(style);
-
-// }
-
-// // Инжектируем скрипт в основной документ
-// injectScript(document);
-
-// // Функция для инжектирования скрипта во все iframes
-// function injectScriptIntoIframes() {
-// 	const iframes = document.querySelectorAll("iframe");
-// 	iframes.forEach((iframe) => {
-// 		try {
-// 			injectScript(iframe.contentDocument || iframe.contentWindow.document);
-// 		} catch (e) {
-// 			console.error("Не удалось инжектировать скрипт в iframe:", e);
-// 		}
-// 	});
-// }
-
-// // Инжектируем скрипт во все существующие iframes
-// injectScriptIntoIframes();
-
-// // Используем MutationObserver для отслеживания новых iframes
-// const observer = new MutationObserver((mutations) => {
-// 	mutations.forEach((mutation) => {
-// 		mutation.addedNodes.forEach((node) => {
-// 			if (node.tagName === "IFRAME") {
-// 				try {
-// 					injectScript(node.contentDocument || node.contentWindow.document);
-// 				} catch (e) {
-// 					console.error("Не удалось инжектировать скрипт в новый iframe:", e);
-// 				}
-// 			}
-// 		});
-// 	});
-// });
-
-// observer.observe(document.body, { childList: true, subtree: true });
-
 let cssUrl;
+let iframeCssUrl;
 
 // Функция для инжектирования скрипта и стилей
-function injectScriptAndStyles(document) {
+function injectScriptAndStyles(document, isIframe = false) {
 	const script = document.createElement("script");
 	script.textContent = `
     console.log(this.document);
@@ -69,7 +10,12 @@ function injectScriptAndStyles(document) {
   `;
 	document.head.appendChild(script);
 
-	if (cssUrl) {
+	if (isIframe && iframeCssUrl) {
+		const link = document.createElement("link");
+		link.rel = "stylesheet";
+		link.href = iframeCssUrl;
+		document.head.appendChild(link);
+	} else if (!isIframe && cssUrl) {
 		const link = document.createElement("link");
 		link.rel = "stylesheet";
 		link.href = cssUrl;
@@ -83,7 +29,8 @@ function injectIntoIframes() {
 	iframes.forEach((iframe) => {
 		try {
 			injectScriptAndStyles(
-				iframe.contentDocument || iframe.contentWindow.document
+				iframe.contentDocument || iframe.contentWindow.document,
+				true
 			);
 		} catch (e) {
 			console.error("Не удалось инжектировать скрипт и стили в iframe:", e);
@@ -106,7 +53,8 @@ function initBitrix24Injector() {
 				if (node.tagName === "IFRAME") {
 					try {
 						injectScriptAndStyles(
-							node.contentDocument || node.contentWindow.document
+							node.contentDocument || node.contentWindow.document,
+							true
 						);
 					} catch (e) {
 						console.error(
@@ -128,6 +76,7 @@ window.addEventListener(
 	function (event) {
 		if (event.data.type && event.data.type === "FROM_CONTENT_SCRIPT") {
 			cssUrl = event.data.cssUrl;
+			iframeCssUrl = event.data.iframeCssUrl;
 			initBitrix24Injector();
 			// Отправляем сообщение обратно в content script
 			window.postMessage(

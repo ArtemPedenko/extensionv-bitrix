@@ -14,7 +14,7 @@
 	],
 	"web_accessible_resources": [
 		{
-			"resources": ["script.js", "styles.css"],
+			"resources": ["script.js", "styles.css", "iframe.css"],
 			"matches": ["*://*.bitrix24.ru/*"]
 		}
 	]
