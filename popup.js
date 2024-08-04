@@ -5,13 +5,13 @@ document.addEventListener("DOMContentLoaded", function () {
 	// Загружаем текущее состояние
 	chrome.storage.sync.get("enabled", function (data) {
 		toggleSwitch.checked = data.enabled;
-		statusText.textContent = data.enabled ? "Включено" : "Выключено";
+		statusText.textContent = data.enabled ? "On" : "Off";
 	});
 
 	toggleSwitch.addEventListener("change", function () {
 		var isEnabled = toggleSwitch.checked;
 		chrome.storage.sync.set({ enabled: isEnabled }, function () {
-			statusText.textContent = isEnabled ? "Включено" : "Выключено";
+			statusText.textContent = isEnabled ? "On" : "Off";
 
 			// Отправляем сообщение всем активным вкладкам
 			chrome.tabs.query({}, function (tabs) {

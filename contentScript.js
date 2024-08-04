@@ -29,6 +29,7 @@ function injectCSS(document, cssUrl) {
 		link.rel = "stylesheet";
 		link.classList.add("injected-style");
 		document.head.appendChild(link);
+		document.body.appendChild(link);
 	}
 }
 

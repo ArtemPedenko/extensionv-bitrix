@@ -156,3 +156,14 @@
 .skeleton__white-bg-element {
 	display: none;
 }
+
+.side-panel-loader-container,
+.side-panel-container {
+	background-image: none !important;
+	background-color: black !important;
+}
+
+.side-panel-loader {
+	background-color: var(--dark) !important;
+	color: var(--neutral) !important;
+}
