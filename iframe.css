@@ -4,6 +4,5 @@
 }
 
 body {
-	background-color: var(--dark) !important;
-	color: var(--neutral) !important;
+	color: white !important;
 }

@@ -3,7 +3,7 @@
 	"name": "Iframe CSS Injector for Bitrix24",
 	"version": "1.0",
 	"description": "Injects CSS into iframes on Bitrix24 pages",
-	"permissions": ["scripting"],
+	"permissions": ["scripting", "storage"],
 	"host_permissions": ["*://*.bitrix24.ru/*"],
 	"content_scripts": [
 		{
@@ -17,5 +17,14 @@
 			"resources": ["script.js", "styles.css", "iframe.css"],
 			"matches": ["*://*.bitrix24.ru/*"]
 		}
-	]
+	],
+	"action": {
+		"default_popup": "popup.html",
+		"default_icon": {
+			"16": "icon16.png"
+		}
+	},
+	"background": {
+		"service_worker": "background.js"
+	}
 }
