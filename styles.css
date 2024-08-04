@@ -97,7 +97,62 @@
 }
 
 .bx-im-list-recent__pinned_container .bx-im-list-recent-item__wrap,
-.bx-im-list-recent-item__wrap {
+.bx-im-list-recent-item__wrap,
+.bx-im-chat-title__text {
 	background-color: var(--dark) !important;
 	color: var(--neutral) !important;
+}
+
+.tasks-kanban-item,
+.tasks-kanban-item-title {
+	background-color: var(--dark) !important;
+	color: var(--neutral) !important;
+}
+
+.bx-im-content-chat__scope {
+	background-image: none !important;
+	background-color: black !important;
+	color: var(--neutral) !important;
+}
+
+.bx-im-message-base__body,
+.bx-im-message-default-content__text {
+	background-color: var(--dark) !important;
+	color: var(--neutral) !important;
+}
+
+.bx-im-message-base__body::before {
+	background: none !important;
+}
+
+.side-panel-loader-container {
+	background-image: none !important;
+}
+
+.bx-im-content-chat-start__container {
+	background-image: none !important;
+	background-color: black !important;
+	color: var(--neutral) !important;
+}
+
+.bx-im-chat-header__container {
+	background-color: var(--dark) !important;
+	color: var(--neutral) !important;
+}
+
+.template-bitrix24 {
+	background: none !important;
+	background-color: black !important;
+	color: var(--neutral) !important;
+}
+
+.feed-add-post-block,
+.feed-post-block,
+.sidebar-widget-content {
+	background-color: var(--dark) !important;
+	color: var(--neutral) !important;
+}
+
+.skeleton__white-bg-element {
+	display: none;
 }
