@@ -14,6 +14,14 @@ script.onload = function () {
 };
 (document.head || document.documentElement).appendChild(script);
 
+function injectCSS(cssUrl) {
+	const link = document.createElement("link");
+	link.href = cssUrl;
+	link.type = "text/css";
+	link.rel = "stylesheet";
+	document.body.appendChild(link);
+}
+
 // Слушаем сообщения от script.js
 window.addEventListener(
 	"message",

@@ -1,3 +1,9 @@
+:root {
+	--dark: #282828;
+	--neutral: #d9d9d9;
+}
+
 body {
-	color: red;
+	background-color: var(--dark) !important;
+	color: var(--neutral) !important;
 }

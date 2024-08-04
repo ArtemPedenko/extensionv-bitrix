@@ -1,4 +1,103 @@
-.main-grid-cell {
+:root {
+	--dark: #282828;
+	--neutral: #d9d9d9;
+}
+
+.main-grid-cell,
+.main-grid-cell-head,
+.main-grid-head-title,
+.main-grid-cell-content,
+.main-grid-editor-container,
+.task-status-text-color-accepted,
+.task-status-text-color-accepted:hover,
+.task-status-text-color-in-progress,
+.task-status-text-color-in-progress:hover,
+.tasks-grid-group-inner,
+.tasks-grid-flow-inner,
+.tasks-grid-username-inner,
+.tasks-grid-wrapper,
+.tasks-grid-wrapper:hover,
+.main-grid-cell,
+.main-grid-bottom-panels,
+.main-grid-panel-content-text,
+.tasks-list-item-pinned td:not([style*="background-color"]),
+.main-buttons-box,
+.main-buttons-item-link,
+.search-title-top-result,
+.search-title-top-block-section .search-title-top-item {
+	background-color: var(--dark) !important;
+	color: var(--neutral) !important;
+}
+
+.search-title-top-item-text {
+	color: var(--neutral) !important;
+}
+
+.search-title-top-block-users
+	.search-title-top-item-selected
+	.search-title-top-item-link,
+.search-title-top-block-sonetgroups
+	.search-title-top-item-selected
+	.search-title-top-item-link,
+.search-title-top-block-tools .search-title-top-item-selected,
+.search-title-top-block-section .search-title-top-item-selected {
 	background-color: black !important;
-	color: white !important;
+	color: var(--neutral) !important;
+}
+
+.intranet-user-profile-column-block,
+.ui-entity-editor-section,
+.ui-entity-editor-section-edit {
+	background-color: var(--dark) !important;
+	color: var(--neutral) !important;
+}
+
+.intranet-user-profile-desktop-block,
+.ui-entity-editor-content-block,
+.intranet-user-profile-column-block-title-text,
+.intranet-user-profile-thanks-user-content-date,
+.intranet-user-profile-thanks-user-content-views,
+.intranet-user-profile-thanks-user-content-title {
+	color: var(--neutral) !important;
+}
+
+.intranet-user-profile-container,
+.intranet-user-profile-container-title,
+.intranet-user-profile-container-body-title,
+.intranet-user-profile-user-name,
+.intranet-user-profile-user-position {
+	background-color: var(--dark) !important;
+	color: var(--neutral) !important;
+}
+
+.task-iframe-popup,
+.task-iframe-popup.task-form-page,
+.task-iframe-popup.task-detail-page {
+	background-color: black !important;
+	color: var(--neutral) !important;
+}
+
+.task-detail-content,
+.task-detail-info,
+.task-detail-subtitle-status,
+.task-detail-buttons,
+.task-switcher-block,
+.task-detail-sidebar-content,
+.task-detail-sidebar-item-value,
+.task-detail-sidebar-info-title {
+	background-color: var(--dark) !important;
+	color: var(--neutral) !important;
+}
+
+.bx-im-list-container-recent__container,
+.bx-im-list-recent__scroll-container,
+.bx-im-list-recent__pinned_container {
+	background-color: black !important;
+	color: var(--neutral) !important;
+}
+
+.bx-im-list-recent__pinned_container .bx-im-list-recent-item__wrap,
+.bx-im-list-recent-item__wrap {
+	background-color: var(--dark) !important;
+	color: var(--neutral) !important;
 }
