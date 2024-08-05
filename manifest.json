@@ -1,8 +1,8 @@
 {
 	"manifest_version": 3,
-	"name": "Iframe CSS Injector for Bitrix24",
+	"name": "Bitrix24 dark",
 	"version": "1.0",
-	"description": "Injects CSS into iframes on Bitrix24 pages",
+	"description": "Bitrix24 dark",
 	"permissions": ["scripting"],
 	"host_permissions": ["*://*.bitrix24.ru/*"],
 	"content_scripts": [
