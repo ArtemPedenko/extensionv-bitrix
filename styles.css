@@ -84,7 +84,8 @@
 .task-switcher-block,
 .task-detail-sidebar-content,
 .task-detail-sidebar-item-value,
-.task-detail-sidebar-info-title {
+.task-detail-sidebar-info-title,
+.tasks-grid-group-link {
 	background-color: var(--dark) !important;
 	color: var(--neutral) !important;
 }
@@ -164,6 +165,19 @@
 }
 
 .side-panel-loader {
+	background-color: var(--dark) !important;
+	color: var(--neutral) !important;
+}
+
+.bx-im-messenger__content_container,
+.bx-im-content-notification__panel_text,
+.bx-im-content-notification-item-content__content-text,
+.bx-im-content-notification-item__container:hover {
+	background-color: var(--dark) !important;
+	color: var(--neutral) !important;
+}
+
+.popup-window {
 	background-color: var(--dark) !important;
 	color: var(--neutral) !important;
 }
